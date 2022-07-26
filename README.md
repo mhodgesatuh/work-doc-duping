@@ -1,5 +1,5 @@
 # Overview
-Dpulicate a set of templates for a list of staff members.
+Duplicate a set of templates for a list of staff members.
 
 # Instructions
 
