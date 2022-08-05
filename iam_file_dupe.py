@@ -5,9 +5,9 @@ Duplicate a set of templates for each team member.
 import os
 import shutil
 
-orginals_dir = './originals/'
-final_dir = './final/'
-original_text = '(template)'
+ORIGINALS_DIR = './originals/'
+FINALS_DIR = './final/'
+ORIGINAL_TEXT = '(template)'
 
 # Get the list of names to include in the duplicated file names.
 names = []
@@ -17,7 +17,7 @@ with open('names.txt', 'r') as name_list:
 name_list.close()
 
 # Read each original and duplicate one per name.
-for original in os.listdir(orginals_dir):
+for original in os.listdir(ORIGINALS_DIR):
     if not original.endswith('.pdf'):
         continue
 
@@ -26,7 +26,7 @@ for original in os.listdir(orginals_dir):
         # Make new file name prefix.
         dupe_text = 'ITS-IAM - ' + name + ' -'
         # Make new file name.
-        dupe_name = original.replace(original_text, dupe_text)
-        final = final_dir + dupe_name
+        dupe_name = original.replace(ORIGINAL_TEXT, dupe_text)
+        final = FINALS_DIR + dupe_name
         # Duplicate
-        shutil.copyfile(orginals_dir + original, final)
+        shutil.copyfile(ORIGINALS_DIR + original, final)
